@@ -1,0 +1,4 @@
+apikey.properties
+
+# Project exclude paths
+/.gradle/
