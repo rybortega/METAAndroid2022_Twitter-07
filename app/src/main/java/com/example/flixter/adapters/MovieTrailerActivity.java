@@ -36,14 +36,10 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
         final String movieId = String.valueOf(movie.getId());
 
-        Log.d("onCreat", "movieId is " + movieId);
         String url = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key="+ MOVIE_API_KEY +"&language=en-US";
-
-        Log.d("onCreate", "Url is " + url);
 
         //Resolve the player view from the Layout
         YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
-
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, null, new JsonHttpResponseHandler() {
@@ -59,14 +55,14 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
                             public void onInitializationSuccess(YouTubePlayer.Provider provider,
                                                                 YouTubePlayer youTubePlayer, boolean b) {
                                 // do any work here to cue video, play video, etc.
-                                Log.d("onCreate", "playing video");
+                                Log.d("onCreate", "Playing video");
                                 youTubePlayer.cueVideo(videoID);
                             }
 
                             @Override
                             public void onInitializationFailure(YouTubePlayer.Provider provider,
                                                                 YouTubeInitializationResult youTubeInitializationResult) {
-                                // log the error
+                                // Log the error
                                 Log.e("MovieTrailerActivity", "Error initializing YouTube player");
                             }
                         });

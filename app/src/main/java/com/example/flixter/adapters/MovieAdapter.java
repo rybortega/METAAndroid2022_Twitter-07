@@ -85,10 +85,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 movie.getBackdropPath() : movie.getPosterPath();
 
 
-            int radius = 1;
-            int margin = 1;
+            int transformRadius = 30;
+            int transformMargin = 10;
 
-            Glide.with(context).load(imageUrl).placeholder(R.drawable.placeholder_portrait).into(ivPoster);
+            //Use Glide to load image into imageView
+            Glide.with(context)
+                    .load(imageUrl).centerCrop()
+                    .transform(new RoundedCornersTransformation(transformRadius, transformMargin))
+                    .placeholder(R.drawable.placeholder_portrait).into(ivPoster);
         }
 
         //When the user clicks on a row, show MovieDetailsActivity for the selected movie
