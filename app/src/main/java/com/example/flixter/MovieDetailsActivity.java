@@ -3,8 +3,6 @@ package com.example.flixter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.media.Rating;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,7 +11,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.flixter.adapters.MovieTrailerActivity;
+import com.example.flixter.models.MovieTrailerActivity;
 import com.example.flixter.models.Movie;
 
 import org.parceler.Parcels;
@@ -53,10 +51,10 @@ public class MovieDetailsActivity extends AppCompatActivity {
         rbVoteAverage.setRating(voteAverage);
 
         //Set imageView content
-        Glide.with(getApplicationContext()).load(movie.getBackdropPath()).placeholder(R.drawable.placeholder_portrait).into(ivTrailer);
+        Glide.with(MovieDetailsActivity.this).load(movie.getBackdropPath()).placeholder(R.drawable.placeholder_portrait).into(ivTrailer);
 
         //Set onClickListener to load the Trailer
-        ivTrailer.setOnClickListener(new View.OnClickListener(){
+        ivTrailer.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

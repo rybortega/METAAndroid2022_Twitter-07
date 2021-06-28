@@ -1,4 +1,4 @@
-package com.example.flixter.adapters;
+package com.example.flixter.models;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,7 +36,7 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
         final String movieId = String.valueOf(movie.getId());
 
-        String url = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key="+ MOVIE_API_KEY +"&language=en-US";
+        String url = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=" + MOVIE_API_KEY + "&language=en-US";
 
         //Resolve the player view from the Layout
         YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
