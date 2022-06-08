@@ -1,28 +1,46 @@
-# Project 2 - *Flixter*
+# Project 3 - Twitter
 
-**Flixter** shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
+Twitter is an android app that allows a user to view their Twitter timeline and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **4.5** hours spent in total
+Time spent: 17 hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-* [x] User can **scroll through current movies** from the Movie Database API
-* [x] Display a nice default [placeholder graphic](https://guides.codepath.org/android/Displaying-Images-with-the-Glide-Library#advanced-usage) for each image during loading
-* [x] For each movie displayed, user can see the following details:
-  * [x] Title, Poster Image, Overview (Portrait mode)
-  * [x] Title, Backdrop Image, Overview (Landscape mode)
-* [x]  Allow user to view details of the movie including ratings within a separate activity
+* [x]	User can **sign in to Twitter** using OAuth login
+* [x]	User can **view tweets from their home timeline**
+  * [x] User is displayed the username, name, and body for each tweet
+  * [x] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
+* [x] User can **compose and post a new tweet**
+  * [x] User can click a “Compose” icon in the Action Bar on the top right
+  * [x] User can then enter a new tweet and post this to Twitter
+  * [x] User is taken back to home timeline with **new tweet visible** in timeline
+  * [x] Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
+* [x] User can **see a counter with total number of characters left for tweet** on compose tweet page
+* [x] User can **pull down to refresh tweets timeline**
+* [x] User can **see embedded image media within a tweet** on list or detail view.
 
-The following **stretch** features are implemented:
+The following **optional** features are implemented:
 
-* [x] Improved the user interface by experimenting with styling and coloring.
-* [x] Apply rounded corners for the poster or background images using [Glide transformations](https://guides.codepath.org/android/Displaying-Images-with-the-Glide-Library#transformations)
-* [x] Apply the popular [View Binding annotation library](http://guides.codepath.org/android/Reducing-View-Boilerplate-with-ViewBinding) to reduce boilerplate code.
-* [x] Allow video trailers to be played in full-screen using the YouTubePlayerView from the details screen.
+* [x] User is using **"Twitter branded" colors and styles**
+* [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
+* [ ] User can **select "reply" from home timeline to respond to a tweet**
+  * [ ] User that wrote the original tweet is **automatically "@" replied in compose**
+* [x] User can tap a tweet to **open a detailed tweet view**
+  * [x] User can **take favorite (and unfavorite) or retweet** actions on a tweet
+* [ ] User can view more tweets as they scroll with infinite pagination
+* [ ] Compose tweet functionality is built using modal overlay
+* [x] User can **click a link within a tweet body** on tweet details view. The click will launch the web browser with relevant page opened.
+* [ ] Replace all icon drawables and other static image assets with [vector drawables](http://guides.codepath.org/android/Drawables#vector-drawables) where appropriate.
+* [ ] User can view following / followers list through any profile they view.
+* [ ] Use the View Binding library to reduce view boilerplate.
+* [ ] On the Twitter timeline, apply scrolling effects such as [hiding/showing the toolbar](http://guides.codepath.org/android/Using-the-App-ToolBar#reacting-to-scroll) by implementing [CoordinatorLayout](http://guides.codepath.org/android/Handling-Scrolls-with-CoordinatorLayout#responding-to-scroll-events).
+* [ ] User can **open the twitter app offline and see last loaded tweets**. Persisted in SQLite tweets are refreshed on every application launch. While "live data" is displayed when app can get it from Twitter API, it is also saved for use in offline mode.
 
 The following **additional** features are implemented:
+
+* [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
 
